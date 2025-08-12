@@ -1,13 +1,20 @@
 
+import { Outlet } from 'react-router-dom'
 import './App.css'
-import Home from './Components/Home/Home'
+import NavBar from './Components/NavBar/NavBar'
+import Footer from './Components/Footer/Footer'
 
 function App() {
-  
+
 
   return (
     <>
-    <Home></Home>
+      <div className="max-w-11/12 mx-auto">
+        <NavBar></NavBar>
+        <Outlet></Outlet>
+        <Footer></Footer>
+      </div>
+
     </>
   )
 }
