@@ -40,8 +40,8 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-3">
-                <div className="w-[40px] h-[40px] border border-[rgba(11,11,11,.1)] rounded-full flex justify-center items-center"><span className="text-xl"><IoCartOutline /></span></div>
-                <div className="w-[40px] h-[40px] border border-[rgba(11,11,11,.1)] rounded-full flex justify-center items-center"><span className="text-xl"><FaRegHeart /></span></div>
+                <div className="btn w-[40px] h-[40px] border border-[rgba(11,11,11,.1)] rounded-full flex justify-center items-center"><span className="text-xl"><IoCartOutline /></span></div>
+                <div className="btn w-[40px] h-[40px] border border-[rgba(11,11,11,.1)] rounded-full flex justify-center items-center"><span className="text-xl"><FaRegHeart /></span></div>
             </div>
         </div>
     );
