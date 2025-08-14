@@ -14,7 +14,7 @@ const ProductDetail = () => {
                 <h1 className="mb-4 font-bold text-3xl text-white">Product Details</h1>
                 <p className="text-base text-white">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
             </div>
-            <div className="p-4 bg-white rounded-4xl absolute top-2/5 md:left-40 lg:left-80">
+            <div className="p-4 bg-white rounded-4xl absolute top-2/5 md:left-40 lg:left-80 border border-[rgb(0,0,0,.08)]">
                 <div className="hero">
                     <div className="hero-content flex-col lg:flex-row">
                         <img

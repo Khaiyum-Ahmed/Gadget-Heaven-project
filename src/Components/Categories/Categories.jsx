@@ -1,16 +1,19 @@
 
-import { NavLink } from "react-router-dom";
 
-const Categories = ({ category }) => {
-    const { category_id, category_name } = category;
+const Categories = ({ category, selectCategory, setSelectCategory}) => {
+    const { category_name } = category;
 
     // console.log(category)
     return (
         <div className="text-center mb-4">
-            <button className="bg-[rgba(9,8,15,.05)] rounded-4xl text-[18px] font-medium w-full text-[rgba(9,8,15,.6)] py-3">
-                <NavLink to={`products/${category_id}`}
-                >{category_name}</NavLink>
-            </button>
+             <button
+            onClick={() => setSelectCategory(category_name)}
+            className={`w-full py-3 rounded-full mb-2 ${
+                selectCategory === category_name ? "bg-purple-500 text-white" : "bg-gray-200"
+            }`}
+        >
+            {category_name}
+        </button>
 
 
         </div>

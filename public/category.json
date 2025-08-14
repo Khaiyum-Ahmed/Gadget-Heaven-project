@@ -22,5 +22,9 @@
   {
     "category_id": 666,
     "category_name": "Macbooks"
+  },
+  {
+    "category_id": 777,
+    "category_name": "Desktop"
   }
 ]

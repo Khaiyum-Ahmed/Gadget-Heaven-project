@@ -3,10 +3,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 const NavBar = () => {
     const links = <>
-            {/* <li><NavLink to='/'>Home</NavLink></li>
-            <li><NavLink to='statistics'>Statistics</NavLink></li>
-            <li><NavLink to='dashboard'>Dashboard</NavLink></li> */}
-
+          
             <li><NavLink to='/' className={({isActive, isPending})=> isActive ? `text-[#9538E2] font-bold text-xl` : isPending ? `text-[rgba(11,11,11,.7)] font-medium text-base` : ''} >Home</NavLink></li>
             <li><NavLink to='statistics' className={({isActive, isPending})=> isActive ? `text-[#9538E2] font-bold text-xl` : isPending ? `text-[rgba(11,11,11,.7)] font-medium text-base` : ''} >Statistics</NavLink></li>
             <li><NavLink to='dashboard' className={({isActive, isPending})=> isActive ? `text-[#9538E2] font-bold text-xl` : isPending ? `text-[rgba(11,11,11,.7)] font-medium text-base` : ''} >Dashboard</NavLink></li>

@@ -6,12 +6,18 @@ const Products = () => {
     const [products, setProducts] = useState([]);
 
     const [categories, setCategories] = useState([]);
+
+    const [selectCategory, setSelectCategory] = useState("All Products");
+
+    const filteredProducts = selectCategory === "All Products" ? products : products.filter((p) => p.category === selectCategory);
+
+    console.log(filteredProducts, selectCategory)
+
     useEffect(() => {
         fetch('category.json')
             .then(res => res.json())
             .then(data => setCategories(data))
     }, []);
-    
 
     useEffect(() => {
         fetch('data.json')
@@ -19,7 +25,6 @@ const Products = () => {
             .then(data => setProducts(data))
     }, []);
 
-    // console.log(categories, products);
     return (
         <div className="mt-96 lg:pt-80">
 
@@ -28,13 +33,19 @@ const Products = () => {
             <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5">
                 <div className="grid-cols-1">
                     {
-                       categories.map(category => <Categories key={category.category_id} category={category}></Categories>)
+                        categories.map(category => <Categories key={category.category_id} category={category} selectCategory={selectCategory} setSelectCategory={setSelectCategory}></Categories>)
                     }
-                   
+
                 </div>
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 col-span-3 ">
                     {
-                        products.map(product => <Product key={product.product_id} product={product}></Product>)
+
+                       filteredProducts.length > 0 ?(
+                         filteredProducts.map(product => (
+                            <Product key={product.product_id} product={product} />
+                        ))
+                       ) : <p className="text-center text-4xl font-bold col-span-3 content-center">No Data Found</p>
+
                     }
                 </div>
 
