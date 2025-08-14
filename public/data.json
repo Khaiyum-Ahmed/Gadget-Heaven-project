@@ -1,6 +1,6 @@
 [
   {
-    "product_id": "P001",
+    "product_id": 1,
     "product_title": "Acer Aspire 5",
     "product_image": "https://i.ibb.co.com/hxtKQ6Zp/71-2-H96-GHZL-AC-SL1500.jpg",
     "category": "laptops",
@@ -11,7 +11,7 @@
     "rating": 4.3
   },
   {
-    "product_id": "P002",
+    "product_id": 2,
     "product_title": "HP Pavilion 15",
     "product_image": "https://i.ibb.co.com/Fkg2Y4B5/con-nb-felicitte-hp-pavilion-laptop-15-eh2000-product-image.png",
     "category": "laptops",
@@ -22,7 +22,7 @@
     "rating": 4.5
   },
   {
-    "product_id": "P003",
+    "product_id": 3,
     "product_title": "Dell Inspiron 14",
     "product_image": "https://i.ibb.co.com/7t2DGDRt/634e651509ab9163ff394675-2021-newest-dell-inspiron-14-5000-series.jpg",
     "category": "laptops",
@@ -33,7 +33,7 @@
     "rating": 4.4
   },
   {
-    "product_id": "P004",
+    "product_id": 4,
     "product_title": "Lenovo ThinkPad E15",
     "product_image": "https://i.ibb.co.com/tM7cMFy3/thinkpad-e15-1-500x500.jpg",
     "category": "laptops",
@@ -44,7 +44,7 @@
     "rating": 4.6
   },
   {
-    "product_id": "P005",
+    "product_id": 5,
     "product_title": "Asus VivoBook 14",
     "product_image": "https://i.ibb.co.com/zh9TPTHt/ASUS-VIVOBOOK-20-4.jpg",
     "category": "laptops",
@@ -55,7 +55,7 @@
     "rating": 4.1
   },
   {
-    "product_id": "P006",
+    "product_id": 6,
     "product_title": "MSI GF63 Thin",
     "product_image": "https://i.ibb.co.com/NgZQDjgg/GF-63-thin-1.jpg",
     "category": "laptops",
@@ -66,7 +66,7 @@
     "rating": 4.7
   },
   {
-    "product_id": "P007",
+    "product_id": 7,
     "product_title": "iPhone 14 Pro",
     "product_image": "https://i.ibb.co.com/cGMcH6N/61-XO4b-ORHUL-UF1000-1000-QL80.jpg",
     "category": "phones",
@@ -77,7 +77,7 @@
     "rating": 4.9
   },
   {
-    "product_id": "P008",
+    "product_id": 8,
     "product_title": "Samsung Galaxy S23",
     "product_image": "https://i.ibb.co.com/8DjNKBb9/71-Rn-JXDex-ML-UF1000-1000-QL80.jpg",
     "category": "phones",
@@ -88,7 +88,7 @@
     "rating": 4.8
   },
   {
-    "product_id": "P009",
+    "product_id": 9,
     "product_title": "Google Pixel 7",
     "product_image": "https://i.ibb.co.com/5Whkw19j/Google-Pixel-7-Lemongrass.jpg",
     "category": "phones",
@@ -99,7 +99,7 @@
     "rating": 4.7
   },
   {
-    "product_id": "P010",
+    "product_id": 10,
     "product_title": "OnePlus 11",
     "product_image": "https://i.ibb.co.com/VYfLvmCB/Oneplus11-800x800.png",
     "category": "phones",
@@ -110,7 +110,7 @@
     "rating": 4.6
   },
   {
-    "product_id": "P011",
+    "product_id": 11,
     "product_title": "Sony WH-1000XM5",
     "product_image": "https://i.ibb.co.com/Ld9mgGXp/sony-wh-1000xm5-silver-wireless-noise-cancelling-11735735371.webp",
     "category": "accessories",
@@ -121,7 +121,7 @@
     "rating": 4.9
   },
   {
-    "product_id": "P012",
+    "product_id": 12,
     "product_title": "Logitech MX Master 3S",
     "product_image": "https://i.ibb.co.com/WNSR9gnk/logitech-mx-master-3s-01-500x500.jpg",
     "category": "accessories",
@@ -132,7 +132,7 @@
     "rating": 4.8
   },
   {
-    "product_id": "P013",
+    "product_id": 13,
     "product_title": "Apple Magic Keyboard",
     "product_image": "https://i.ibb.co.com/0jZ1G1nF/2875-70321.jpg",
     "category": "accessories",
@@ -143,7 +143,7 @@
     "rating": 4.7
   },
   {
-    "product_id": "P014",
+    "product_id": 14,
     "product_title": "Razer Kraken X",
     "product_image": "https://i.ibb.co.com/vCcfpP4S/cover-cache-optimize-60.webp",
     "category": "accessories",
@@ -154,7 +154,7 @@
     "rating": 4.5
   },
   {
-    "product_id": "P015",
+    "product_id": 15,
     "product_title": "Apple Watch Series 8",
     "product_image": "https://i.ibb.co.com/tPDCYkQN/Apple-Watch-Series-8-GPS-45mm-Starlight-Aluminum-Case-Starlight-Sport-Band-M-L-Fitness-Tracker-Blood.webp",
     "category": "smartwatches",
@@ -165,7 +165,7 @@
     "rating": 4.9
   },
   {
-    "product_id": "P016",
+    "product_id": 16,
     "product_title": "Samsung Galaxy Watch 5",
     "product_image": "https://i.ibb.co.com/B53cwSkg/galaxy-watch5-bioacitive-sensor-bia-mo.webp",
     "category": "smartwatches",
@@ -176,7 +176,7 @@
     "rating": 4.7
   },
   {
-    "product_id": "P017",
+    "product_id": 17,
     "product_title": "Fitbit Sense 2",
     "product_image": "https://i.ibb.co.com/kgpF5KKC/Fitbit-Sense-2-Fitness-Smartwatch-Shadow-Grey-9668.webp",
     "category": "smartwatches",
@@ -187,7 +187,7 @@
     "rating": 4.5
   },
   {
-    "product_id": "P018",
+    "product_id": 18,
     "product_title": "Garmin Venu 2",
     "product_image": "https://i.ibb.co.com/VWWktQ1S/venu-2-slate-01-500x500.webp",
     "category": "smartwatches",
@@ -198,7 +198,7 @@
     "rating": 4.6
   },
   {
-    "product_id": "P019",
+    "product_id": 19,
     "product_title": "MacBook Air M2",
     "product_image": "https://i.ibb.co.com/5WBK1yZ5/macbook-air-m2-chip-starlight-02-500x500-1-500x500-jpg.webp",
     "category": "macbooks",
@@ -209,7 +209,7 @@
     "rating": 4.9
   },
   {
-    "product_id": "P020",
+    "product_id": 20,
     "product_title": "MacBook Pro 14 M1 Pro",
     "product_image": "https://i.ibb.co.com/27DxzmdK/14-16-inch-macbook-pro-2021.webp",
     "category": "macbooks",
@@ -220,7 +220,7 @@
     "rating": 5.0
   },
   {
-    "product_id": "P021",
+    "product_id": 21,
     "product_title": "MacBook Pro 16 M1 Max",
     "product_image": "https://i.ibb.co.com/4ZXB6q3h/Mac-Book-Pro-16-Apple-M1-Max.jpg",
     "category": "macbooks",
@@ -231,7 +231,7 @@
     "rating": 5.0
   },
   {
-    "product_id": "P022",
+    "product_id": 22,
     "product_title": "MacBook Air M1",
     "product_image": "https://i.ibb.co.com/W44QvSkN/hero-image.webp",
     "category": "macbooks",

@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
-    const {product_image,product_title,price,product_id}= product;
+    const { product_image, product_title, price, product_id } = product;
     return (
         <div>
             {/* <div>
@@ -14,9 +15,11 @@ const Product = ({ product }) => {
                 </figure>
                 <div className="card-body">
                     <h2 className="card-title text-2xl font-semibold text-[#09080F] mb-3">{product_title}</h2>
-                   <p className="text-xl font-medium text-[rgba(9,8,15,.6)] mb-4">Price: ${price}</p>
+                    <p className="text-xl font-medium text-[rgba(9,8,15,.6)] mb-4">Price: ${price}</p>
                     <div className="card-actions ">
-                        <button className="btn-outline btn text-[#9538E2] text-xl font-semibold py-3 px-5 rounded-4xl">View Details</button>
+                        <Link to={`/products/${product_id}`}>
+                            <button className="btn-outline btn text-[#9538E2] text-xl font-semibold py-3 px-5 rounded-4xl">View Details</button>
+                        </Link>
                     </div>
                 </div>
             </div>

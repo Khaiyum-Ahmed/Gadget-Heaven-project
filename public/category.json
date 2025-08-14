@@ -1,0 +1,26 @@
+[
+  {
+    "category_id": 111,
+    "category_name": "All Products"
+  },
+  {
+    "category_id": 222,
+    "category_name": "Laptops"
+  },
+  {
+    "category_id": 333,
+    "category_name": "Phones"
+  },
+  {
+    "category_id": 444,
+    "category_name": "Accessories"
+  },
+  {
+    "category_id": 555,
+    "category_name": "Smartwatches"
+  },
+  {
+    "category_id": 666,
+    "category_name": "Macbooks"
+  }
+]
