@@ -1,12 +1,21 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import { addToStoredCartList } from "../../Utilities/AddToDb";
 const ProductDetail = () => {
     const { product_id } = useParams();
     const id = parseInt(product_id);
     const data = useLoaderData();
     const product = data.find(product => product.product_id === id);
     const { description, price, product_image, product_title, rating, specification, availability } = product;
+
+    const handleAddToCart = (id) =>{
+        addToStoredCartList(id);
+    }
+
+    // const handleAddToWishlist = (id) =>{
+
+    // }
     // console.log(typeof product_id, product_id, id, typeof id, data)
     return (
         <div className="bg-[#9538E2] py-8 relative lg:mb-[450px] md:mb-[850px]">
@@ -56,7 +65,7 @@ const ProductDetail = () => {
                             </div>
                             <div className="flex items-center gap-5 py-6">
                               
-                                    <button className="cursor-pointer bg-[#9538E2] font-bold text-[18px] text-white rounded-4xl py-3 px-5 flex items-center gap-3">Add To Card <span className="text-2xl font-bold"><MdOutlineShoppingCart /></span></button>
+                                    <button onClick={()=>handleAddToCart(id)} className="cursor-pointer bg-[#9538E2] font-bold text-[18px] text-white rounded-4xl py-3 px-5 flex items-center gap-3">Add To Card <span className="text-2xl font-bold"><MdOutlineShoppingCart /></span></button>
                                     
 
                                
