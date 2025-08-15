@@ -6,6 +6,9 @@ const getStoredCartList = ()=>{
         const storedList = JSON.parse(storedListStr);
         return storedList;
     }
+    else{
+        return[];
+    }
 }
 
 const addToStoredCartList = (id) =>{
@@ -14,12 +17,13 @@ const addToStoredCartList = (id) =>{
     if(storedList.includes(id)){
         // already exists, do not add it
         // toast
+        alert('Already exists this product')
     }
     else{
         storedList.push(id);
         const storedListStr = JSON.stringify(storedList);
         localStorage.setItem('cart-list', storedListStr);
-        // toast
+        alert('successfully added to Cart')
     }
 }
 

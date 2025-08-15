@@ -1,10 +1,11 @@
 
-const Statisticsl = () => {
+const Statistics = () => {
     return (
         <div>
-            <h1>Statistics page</h1>
+            <h1>bar charts</h1>
+         
         </div>
     );
 };
 
-export default Statisticsl;
+export default Statistics;

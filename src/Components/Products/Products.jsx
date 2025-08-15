@@ -11,7 +11,7 @@ const Products = () => {
 
     const filteredProducts = selectCategory === "All Products" ? products : products.filter((p) => p.category === selectCategory);
 
-    console.log(filteredProducts, selectCategory)
+    // console.log(filteredProducts, selectCategory)
 
     useEffect(() => {
         fetch('category.json')

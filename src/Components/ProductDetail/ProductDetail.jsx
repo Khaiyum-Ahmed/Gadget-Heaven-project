@@ -4,15 +4,21 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { addToStoredCartList } from "../../Utilities/AddToDb";
 const ProductDetail = () => {
     const { product_id } = useParams();
+
     const id = parseInt(product_id);
+
     const data = useLoaderData();
+
     const product = data.find(product => product.product_id === id);
+
     const { description, price, product_image, product_title, rating, specification, availability } = product;
 
-    const handleAddToCart = (id) =>{
+    const handleAddToCart = (id) => {
         addToStoredCartList(id);
+        // alert('clicked')
     }
 
+    // console.log(typeof id)
     // const handleAddToWishlist = (id) =>{
 
     // }
@@ -38,11 +44,11 @@ const ProductDetail = () => {
 
 
                             {
-                                availability?(<span className="bg-[rgba(48,156,8,.1)] rounded-4xl py-2 px-3 text-[14px] font-medium border border-[#309C08] text-[#309C08]">In Stock</span>) : (<span className="bg-[rgba(48,156,8,.1)] rounded-4xl py-2 px-3 border border-[#309C08] text-[14px] font-medium text-[#ff4400]">Out of Stock</span>)
+                                availability ? (<span className="bg-[rgba(48,156,8,.1)] rounded-4xl py-2 px-3 text-[14px] font-medium border border-[#309C08] text-[#309C08]">In Stock</span>) : (<span className="bg-[rgba(48,156,8,.1)] rounded-4xl py-2 px-3 border border-[#309C08] text-[14px] font-medium text-[#ff4400]">Out of Stock</span>)
                             }
-                            
-                            
-                            
+
+
+
                             <p className="pt-5 font-normal text-[18px] text-[rgba(9,8,15,.6)]">
                                 {description}
                             </p>
@@ -56,7 +62,7 @@ const ProductDetail = () => {
                             <div className="flex items-center gap-2">
                                 <div className="rating">
                                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" aria-label="1 star" />
-                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" aria-label="2 star"  />
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" aria-label="2 star" />
                                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" aria-label="3 star" />
                                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" aria-label="4 star" defaultChecked />
                                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" aria-label="5 star" />
@@ -64,13 +70,13 @@ const ProductDetail = () => {
                                 <div className="w-[50px] h-[32px] bg-[rgba(9,8,15,.05)] rounded-4xl flex justify-center items-center"><span>{rating}</span></div>
                             </div>
                             <div className="flex items-center gap-5 py-6">
-                              
-                                    <button onClick={()=>handleAddToCart(id)} className="cursor-pointer bg-[#9538E2] font-bold text-[18px] text-white rounded-4xl py-3 px-5 flex items-center gap-3">Add To Card <span className="text-2xl font-bold"><MdOutlineShoppingCart /></span></button>
-                                    
 
-                               
+                                <button onClick={() => handleAddToCart(id)} className="cursor-pointer bg-[#9538E2] font-bold text-[18px] text-white rounded-4xl py-3 px-5 flex items-center gap-3">Add To Card <span className="text-2xl font-bold"><MdOutlineShoppingCart /></span></button>
+
+
+
                                 <div className="w-[50px] h-[50px] border border-[rgba(9,8,15,.2)] rounded-4xl flex justify-center items-center">
-                                    <span  className="text-[#3A3A3A] text-2xl"><FaRegHeart /></span>
+                                    <span className="text-[#3A3A3A] text-2xl"><FaRegHeart /></span>
                                 </div>
                             </div>
                         </div>
