@@ -28,4 +28,32 @@ const addToStoredCartList = (id) =>{
 }
 
 
-export {addToStoredCartList, getStoredCartList}
+const getStoredWistList = ()=>{
+    // cartlist
+    const storedListStr = localStorage.getItem('wish-list');
+    if(storedListStr){
+        const storedList = JSON.parse(storedListStr);
+        return storedList;
+    }
+    else{
+        return[];
+    }
+}
+
+const addToStoredWishList = (id) =>{
+    const storedList = getStoredWistList();
+
+    if(storedList.includes(id)){
+        // already exists, do not add it
+        // toast
+        alert('Already exists this product')
+    }
+    else{
+        storedList.push(id);
+        const storedListStr = JSON.stringify(storedList);
+        localStorage.setItem('wish-list', storedListStr);
+        alert('successfully added to wishlist')
+    }
+}
+
+export {addToStoredCartList, getStoredCartList, getStoredWistList, addToStoredWishList}

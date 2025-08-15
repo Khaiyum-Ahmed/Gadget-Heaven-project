@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import { getStoredCartList } from "../../Utilities/AddToDb";
+import { getStoredCartList, getStoredWistList } from "../../Utilities/AddToDb";
 import CartProduct from "../CartProduct/CartProduct";
 import Product from "../Product/Product";
 
@@ -9,18 +9,32 @@ const Dashboard = () => {
 
     const [cartList, setCartList] = useState([]);
 
+    const [wishList, setWishList]= useState([]);
+
+    const [view, setView] = useState("cart");
+
     useEffect(() => {
         const storedCartList = getStoredCartList();
+
         const storedCartListInt = storedCartList.map(id => parseInt(id));
+
         const addCartList = allProducts.filter(product => storedCartListInt.includes(product.product_id));
 
-        setCartList(addCartList)
-    }, []);
+        setCartList(addCartList);
+
+        const storedWishList = getStoredWistList();
+
+        const storedWishListInt = storedWishList.map(id => parseInt(id));
+        const addWishList = allProducts.filter(product => storedWishListInt.includes(product.product_id));
+        setWishList(addWishList)
+    }, [allProducts]);
 
     
-    const totalPrice = () => {
-        return cartList.reduce((sum, item) => sum + item.price, 0);
-    };
+    const totalPrice = (list) => {
+    return list.reduce((sum, item) => sum + item.price, 0);
+  };
+
+    const displayedList = view === "cart" ? cartList : wishList;
     
     // console.log(allProducts, cartList)
 
@@ -32,18 +46,21 @@ const Dashboard = () => {
                     <p className="text-base text-white">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
                 </div>
 
-                <div>
+                <div className="space-x-4 text-[18px]">
 
-                    <button className="btn btn-info mr-6">Cart</button>
-                    <button className="btn btn-info">Wishlist</button>
+                    <button onClick={()=> setView("cart")} className={`rounded-4xl cursor-pointer py-3 px-16 ${view === "cart" ? "text-[#9538E2] bg-white font-extrabold":"bg-transparent border border-[#fff] text-white"}`}>Cart</button>
+                    <button onClick={()=> setView("wishlist")}
+                    className={`rounded-4xl py-3 cursor-pointer px-16 ${view === "wishlist"? "text-[#9538E2] bg-white font-extrabold": "bg-transparent border border-[#fff] text-white"}`}>Wishlist</button>
                 </div>
             </div>
 
             <div className="my-8">
                 <div className="flex justify-between items-center">
-                    <div><h3 className="font-bold text-2xl text-[#0B0B0B]">Cart</h3></div>
+                    <div><h3 className="font-bold text-2xl text-[#0B0B0B]">
+                        {view === "cart" ? "Cart" : "WishList"}
+                        </h3></div>
                     <div className="flex items-center gap-3">
-                        <h6 className="font-bold text-2xl text-[#0B0B0B]">Total Cost : $ {totalPrice()}</h6>
+                        <h6 className="font-bold text-2xl text-[#0B0B0B]">Total Cost: ${totalPrice(displayedList).toFixed(2)}</h6>
                         <button className="btn btn-accent">Sort by Price</button>
                         <button className="btn btn-info"> Purchase</button>
                     </div>
@@ -52,8 +69,9 @@ const Dashboard = () => {
 
             <div>
                  {
-                cartList.map( product => <CartProduct key={product.product_id} product={product}></CartProduct>)
+                displayedList.map( product => (<CartProduct key={product.product_id} product={product}></CartProduct>))
                  }
+
             </div>
 
         </div>
