@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getStoredCartList, getStoredWistList } from "../../Utilities/AddToDb";
 import CartProduct from "../CartProduct/CartProduct";
+import payment from "../../assets/images/Group.png"
 
 const Dashboard = () => {
     const allProducts = useLoaderData();
@@ -82,7 +83,26 @@ const Dashboard = () => {
                     <div className="flex items-center gap-3">
                         <h6 className="font-bold text-2xl text-[#0B0B0B]">Total Cost: ${totalPrice(displayedList)}</h6>
                         <button onClick={() => handleSort()} className="text-[#9538E2] text-[18px] font-semibold py-3 px-6 rounded-4xl border cursor-pointer border-[#9538E2]">Sort by Price</button>
-                        <button className="font-medium text-[18px] text-white bg-[#9538E2] py-3 px-6 rounded-4xl cursor-pointer"> Purchase</button>
+                        {/* <button className="font-medium text-[18px] text-white bg-[#9538E2] py-3 px-6 rounded-4xl cursor-pointer"> Purchase</button> */}
+
+                        {/* Open the modal using document.getElementById('ID').showModal() method */}
+                        <button className="font-medium text-[18px] text-white bg-[#9538E2] py-3 px-6 rounded-4xl cursor-pointer" onClick={() => document.getElementById('my_modal_1').showModal()}>Purchase</button>
+                        <dialog id="my_modal_1" className="modal">
+                            <div className="modal-box text-center">
+                                <div className="w-full">
+                                    <img className="mb-4 my-w-20 mx-auto" src={payment} alt="" />
+                                </div>
+                                <h3 className="font-bold text-2xl text-[#09080F]">Payment Successfully</h3>
+                                <p className="py-4 font-medium text-base text-[rgba(9,8,15,.6)]">Thanks for purchasing. <br/> Total: {totalPrice(displayedList)}</p>
+                                <div className="modal-action justify-center">
+                                    <form method="dialog">
+                                        {/* if there is a button in form, it will close the modal */}
+                                        <button className="btn w-full text-[#09080F] text-base font-semibold">Close</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
+
                     </div>
                 </div>
             </div>
