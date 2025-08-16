@@ -1,6 +1,6 @@
 import { IoMdCloseCircleOutline } from "react-icons/io";
-const CartProduct = ({ product }) => {
-    const { description, product_image, product_title, price } = product;
+const CartProduct = ({ product,handleRemoveList }) => {
+    const { description, product_image, product_title, price,product_id } = product;
     return (
         <div>
             <div className="bg-base-200 rounded-3xl p-6 mb-6">
@@ -18,7 +18,7 @@ const CartProduct = ({ product }) => {
                         <h3 className="text-xl font-semibold text-[rgba(9,8,15,.8)]">Price: $ {price}</h3>
                         </div>
                         <div className="mr-8">
-                            <span className="text-4xl text-[#FF0000]"><IoMdCloseCircleOutline /></span>
+                            <span onClick={()=>handleRemoveList(product_id)} className="text-4xl cursor-pointer text-[#FF0000]"><IoMdCloseCircleOutline /></span>
                         </div>
                     </div>
                 </div>

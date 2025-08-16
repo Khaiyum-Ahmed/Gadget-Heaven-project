@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getStoredCartList, getStoredWistList } from "../../Utilities/AddToDb";
 import CartProduct from "../CartProduct/CartProduct";
-import Product from "../Product/Product";
 
 const Dashboard = () => {
     const allProducts = useLoaderData();
@@ -41,21 +40,23 @@ const Dashboard = () => {
         return sum;
     };
 
-    const handleSort = sortPrice =>{
+    const handleSort = sortPrice => {
         setSort(sortPrice);
-        // if(sortPrice === "price"){
-        //     const sortedCartList = [...cartList].sort((a,b)=> b.price - a.price);
-        //     setCartList(sortedCartList)
-        // }
-          const sortedCartList = [...cartList].sort((a,b)=> b.price - a.price);
-          const sortedWishtList = [...wishList].sort((a,b)=> b.price - a.price);
-            setCartList(sortedCartList)
-            setWishList(sortedWishtList)
+        const sortedCartList = [...cartList].sort((a, b) => b.price - a.price);
+        const sortedWishtList = [...wishList].sort((a, b) => b.price - a.price);
+        setCartList(sortedCartList)
+        setWishList(sortedWishtList)
+    }
+
+    const handleRemoveList = (id) => {
+        const remainingCartList = cartList.filter(cart => cart.product_id !== id);
+        setCartList(remainingCartList);
+        const remainingWishList = wishList.filter(wish => wish.product_id !== id);
+        setWishList(remainingWishList);
     }
 
     const displayedList = view === "cart" ? cartList : wishList;
 
-    // console.log(allProducts, cartList)
 
     return (
         <div>
@@ -80,7 +81,7 @@ const Dashboard = () => {
                     </h3></div>
                     <div className="flex items-center gap-3">
                         <h6 className="font-bold text-2xl text-[#0B0B0B]">Total Cost: ${totalPrice(displayedList)}</h6>
-                        <button onClick={()=>handleSort()} className="text-[#9538E2] text-[18px] font-semibold py-3 px-6 rounded-4xl border cursor-pointer border-[#9538E2]">Sort by Price</button>
+                        <button onClick={() => handleSort()} className="text-[#9538E2] text-[18px] font-semibold py-3 px-6 rounded-4xl border cursor-pointer border-[#9538E2]">Sort by Price</button>
                         <button className="font-medium text-[18px] text-white bg-[#9538E2] py-3 px-6 rounded-4xl cursor-pointer"> Purchase</button>
                     </div>
                 </div>
@@ -88,7 +89,7 @@ const Dashboard = () => {
 
             <div>
                 {
-                    displayedList.map(product => (<CartProduct key={product.product_id} product={product}></CartProduct>))
+                    displayedList.map(product => (<CartProduct key={product.product_id} product={product} handleRemoveList={handleRemoveList}></CartProduct>))
                 }
 
             </div>
