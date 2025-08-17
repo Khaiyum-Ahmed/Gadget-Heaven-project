@@ -15,8 +15,7 @@ const addToStoredCartList = (id) =>{
     const storedList = getStoredCartList();
 
     if(storedList.includes(id)){
-        // already exists, do not add it
-        // toast
+      
         alert('Already exists this product')
     }
     else{
@@ -44,8 +43,7 @@ const addToStoredWishList = (id) =>{
     const storedList = getStoredWistList();
 
     if(storedList.includes(id)){
-        // already exists, do not add it
-        // toast
+      
         alert('Already exists this product')
     }
     else{

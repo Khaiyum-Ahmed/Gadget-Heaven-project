@@ -8,13 +8,12 @@ const NavBar = () => {
     const [cartList, setCartList] = useState('');
     const [wishList, setWishList] = useState('');
 
-    useEffect(()=>{
+    useEffect(() => {
         const storeCartList = getStoredCartList();
-        console.log(storeCartList);
         setCartList(storeCartList);
         const storeWishList = getStoredWistList();
         setWishList(storeWishList);
-    },[])
+    }, [])
 
     const links = <>
 
@@ -47,12 +46,12 @@ const NavBar = () => {
             <div className="navbar-end gap-3">
 
                 <div className="indicator btn w-[40px] h-[40px] border border-[rgba(11,11,11,.1)] rounded-full flex justify-center items-center">
-                    <span className="indicator-item text-red-500">{cartList.length}</span>
+                    <span className="indicator-item text-red-500">{cartList.length > 0 ? cartList.length : ""}</span>
                     <span className="text-xl"><IoCartOutline /></span>
                 </div>
 
                 <div className="indicator btn w-[40px] h-[40px] border border-[rgba(11,11,11,.1)] rounded-full flex justify-center items-center">
-                    <span className="indicator-item text-red-500">{wishList.length}</span>
+                    <span className="indicator-item text-red-500">{wishList.length > 0 ? wishList.length : ""}</span>
                     <span className="text-xl"><FaRegHeart /></span>
                 </div>
 
